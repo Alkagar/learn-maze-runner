@@ -1,6 +1,6 @@
 var should = require('should');
 
-var Room = require('../cell.js');
+var Room = require('../room.js');
 var C = require('../const.js');
 var E = require('../errors.js');
 
@@ -22,7 +22,6 @@ describe('Room', function() {
         (typeof room.canOpenWall).should.be.eql('function');
         (typeof room.getPossibleDirections).should.be.eql('function');
         (typeof room.getVisitedTimes).should.be.eql('function');
-
     });
 
     it('should return possible directions', function() {
@@ -42,7 +41,7 @@ describe('Room', function() {
 
         should(function() {
             room.canMove('TOP');
-        }).throw(E.NotPossibleDirectionError);
+            }).throw(E.NotPossibleDirectionError);
     });
 
     it('should not throw on correct direction', function() {
