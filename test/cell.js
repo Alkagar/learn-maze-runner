@@ -7,8 +7,22 @@ var E = require('../errors.js');
 describe('Room', function() {
     it('should expose basic methods', function() {
         var room = Room();
-        (typeof room.canMove).should.be.eql('function');
         (typeof room.getWalls).should.be.eql('function');
+        (typeof room.canMove).should.be.eql('function');
+        (typeof room.setWall).should.be.eql('function');
+        (typeof room.buildRoom).should.be.eql('function');
+        (typeof room.isBuilded).should.be.eql('function');
+        (typeof room.visit).should.be.eql('function');
+        (typeof room.wasVisited).should.be.eql('function');
+        (typeof room.draw).should.be.eql('function');
+        (typeof room.setPosition).should.be.eql('function');
+        (typeof room.getPosition).should.be.eql('function');
+        (typeof room.setMazeSize).should.be.eql('function');
+        (typeof room.getMazeSize).should.be.eql('function');
+        (typeof room.canOpenWall).should.be.eql('function');
+        (typeof room.getPossibleDirections).should.be.eql('function');
+        (typeof room.getVisitedTimes).should.be.eql('function');
+
     });
 
     it('should return possible directions', function() {
@@ -35,19 +49,19 @@ describe('Room', function() {
         var room = Room();
         should(function() {
             room.canMove(C.Directions.UP);
-        }).not.throw(E.NotPossibleDirectionError);
+        }).not.throw(Error);
 
         should(function() {
             room.canMove(C.Directions.DOWN);
-        }).not.throw(E.NotPossibleDirectionError);
+        }).not.throw(Error);
 
         should(function() {
             room.canMove(C.Directions.LEFT);
-        }).not.throw(E.NotPossibleDirectionError);
+        }).not.throw(Error);
 
         should(function() {
             room.canMove(C.Directions.RIGHT);
-        }).not.throw(E.NotPossibleDirectionError);
+        }).not.throw(Error);
     });
 
     it('should move on correct direction', function() {
