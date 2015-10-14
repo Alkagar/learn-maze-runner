@@ -112,7 +112,6 @@ describe('Room', function() {
         var position = room.getPosition();
         position.should.be.an.instanceof(Array).and.have.lengthOf(2);
         position.should.containEql(0);
-        position.should.containEql(0);
     });
 
     it('should throw on incorect direction in set wall', function() {
