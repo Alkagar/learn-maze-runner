@@ -31,7 +31,7 @@ function Room() {
     obj.getPossibleDirections = getPossibleDirections;
     obj.getVisitedTimes = getVisitedTimes;
 
-    function getWalls() {}
+    // function getWalls() {}
 
     function setWall(dir, wall) {
         if (C.PossibleDirections.indexOf(dir) === -1) {

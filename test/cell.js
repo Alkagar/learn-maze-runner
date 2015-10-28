@@ -68,18 +68,18 @@ describe('Room', function() {
         room.setWall(C.Directions.UP, false);
         room.setWall(C.Directions.LEFT, false);
 
-        room.canMove('UP').should.be.ok;
-        room.canMove('LEFT').should.be.ok;
-        room.canMove('RIGHT').should.not.be.ok;
-        room.canMove('DOWN').should.not.be.ok;
+        room.canMove('UP').should.be.ok();
+        room.canMove('LEFT').should.be.ok();
+        room.canMove('RIGHT').should.not.be.ok();
+        room.canMove('DOWN').should.not.be.ok();
     });
 
     it('should corectly build room', function() {
         // maybe anable this only once per room?
         var room = Room();
-        room.isBuilded().should.not.be.ok;
+        room.isBuilded().should.not.be.ok();
         room.buildRoom();
-        room.isBuilded().should.be.ok;
+        room.isBuilded().should.be.ok();
     });
 
     it('should get maze size correctly', function() {
@@ -137,17 +137,17 @@ describe('Room', function() {
         room.setWall(C.Directions.LEFT, false);
         var walls = room.getWalls();
 
-        walls.UP.should.be.ok;
-        walls.DOWN.should.not.be.ok;
-        walls.LEFT.should.be.ok;
-        walls.RIGHT.should.not.be.ok;
+        walls.UP.should.not.be.ok();
+        walls.DOWN.should.be.ok();
+        walls.LEFT.should.not.be.ok();
+        walls.RIGHT.should.be.ok();
     });
 
     it('should be visited after visit', function() {
         var room = Room();
-        room.wasVisited().should.not.be.ok;
+        room.wasVisited().should.not.be.ok();
         room.visit();
-        room.wasVisited().should.be.ok;
+        room.wasVisited().should.be.ok();
     });
 
     it('should retain visit counter', function() {
